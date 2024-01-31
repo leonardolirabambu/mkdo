@@ -1,0 +1,52 @@
+<div class="container-fluid head" [ngClass]="{'transpare':transparent}">
+
+  <div class="row  align-items-center">
+    <div class="col-9">
+      <button (click)="openMenu()" mat-icon-button class="textC-blanco" aria-label="Example icon button with a home icon">
+        <mat-icon class="textc-blanco" >menu</mat-icon>
+      </button>
+
+    </div>
+    <div class="col-3 d-flex align-items-center">
+      <img src="assets/img/MaleAvatar.png" class="avatar m-r-20" alt="">
+      <span class="text-helveticaneuelight-600 textname">{{dataUser.nombre}} {{dataUser.apPaterno}} {{dataUser.apMaterno}}</span>
+      <button (click)="showMenuUser=!showMenuUser" mat-icon-button class="textC-blanco">
+        <mat-icon class="textC-blanco" >account_circle</mat-icon>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="card-menu" [ngClass]="{'active':showMenuUser}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-end">
+        <button (click)="showMenuUser=!showMenuUser"  mat-icon-button class="textC-blanco" >
+          <mat-icon class="textc-blanco" > close </mat-icon>
+        </button>
+      </div>
+      </div>
+      <div class="row  align-items-center">
+      <div class="col-4" >
+        <img src="assets/img/MaleAvatar.png" class="img-fluid avatarG" alt="">
+      </div>
+      <div class="col-6">
+        <span class="text-helveticaneuelight-600 textname">{{dataUser.nombre}} {{dataUser.apPaterno}} {{dataUser.apMaterno}}</span>
+        <br>
+        <span class="text-helveticaneuelight-100 ">{{dataUser.correo}}</span>
+      </div>
+      <div class="col-6 m-t-20">
+        <span class="text-helveticaneuelight-100 ">Mi cuenta</span>
+
+      </div>
+      <div class="col-6 text-end m-t-20">
+        <span (click)="closeSesion()" class="text-helveticaneuelight-600  textc-maroon curser-p">Cerra sesión</span>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+

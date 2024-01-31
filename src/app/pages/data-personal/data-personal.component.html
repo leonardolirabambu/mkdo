@@ -1,0 +1,135 @@
+<app-head [transparent]="true"></app-head>
+<div class="containerPg ">
+  <div class="container">
+    <div class="row m-b-40">
+      <div class="col-10 m-auto">
+        <div class="card card-data w-100">
+          <div class="card-body container">
+            <div class="row align-items-center">
+              <div class="col-3">
+                <img src="assets/img/doctor.png" class="img-fluid" alt="">
+              </div>
+              <div class="col-9">
+                <div class="row">
+                  <form [formGroup]="fordata" (ngSubmit)="sendData()" class="row">
+                  <div class="col-8">
+                    <select formControlName="submit" class="form-select form-select-lg" name="" id="">
+                      <option selected value="null">Selecciona</option>
+                      <option [value]="1">Submit 1</option>
+                      <option [value]="2">Submit 2</option>
+                    </select>
+                  </div>
+                  <div class="col-4 text-center">
+
+                    <select formControlName="status" class="form-select form-select-lg" name="" id="">
+                      <option selected value="null">Selecciona</option>
+                      <option [value]="0">Activo</option>
+                      <option [value]="1">Desactivado</option>
+
+                    </select>
+                  </div>
+
+                    <div class="col-12 m-t-20">
+                      <input formControlName="nombre" type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" />
+                    </div>
+                    <div class="col-6 m-t-20">
+                      <input   formControlName="apPaterno" type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" />
+                    </div>
+                    <div class="col-6 m-t-20">
+                      <input type="text"  formControlName="apMaterno" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" />
+                    </div>
+                    <div class="col-12 m-t-20">
+                      <input type="text"  formControlName="correo"  class="form-control" name="" id="" aria-describedby="helpId" placeholder="" />
+                    </div>
+                    <div class="col-6 m-t-20">
+                      <input type="text"  formControlName="telefono"  class="form-control" name="" id="" aria-describedby="helpId" placeholder="" />
+                    </div>
+                    <div class="col-6 m-t-20">
+                      <input type="text"  formControlName="codigo"  class="form-control" name="" id="" aria-describedby="helpId" placeholder="" />
+                    </div>
+                    <div class="col-6 m-t-20">
+                      <button (click)="resetPassword()" type="button" class="resetPass">Resetear Contraseña</button>
+                    </div>
+                    <div class="col-6 m-t-20 text-end">
+                      <button type="submit" class="resetPass">Guardar Datos</button>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+              <div class="col m-t-30">
+                <div class="card carDoc text-condensedbold-100 m-auto"><span>Invitación</span></div>
+                <div class="row align-items-center m-t-20">
+                  <div class="col-4 text-center " [ngClass]="{'textc-blanco': data?.cartainvitacion,'textc-gris2':!data?.cartainvitacion}">
+                   <a href="{{data!.cartainvitacionURL}}" target="_blank"><mat-icon  [ngClass]="{'curser-p': data?.cartainvitacion}">visibility</mat-icon></a>
+                  </div>
+                  <div class="col-4 text-center textc-blanco" [ngClass]="{'textc-blanco': data?.cartainvitacion,'textc-gris2':!data?.cartainvitacion}">
+                     <mat-icon  [ngClass]="{'curser-p': data?.cartainvitacion}">mail</mat-icon>
+                  </div>
+                  <div class="col-4 text-center textc-blanco" [ngClass]="{'textc-blanco': data?.cartainvitacion,'textc-gris2':!data?.cartainvitacion}">
+                    <a href="{{data!.cartainvitacionURL}}" download> <mat-icon  [ngClass]="{'curser-p': data?.cartainvitacion}">download</mat-icon></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col m-t-30">
+                <div class="card carDoc text-condensedbold-100 m-auto"><span>Confirmación Doctor</span></div>
+                <div class="row align-items-center m-t-20">
+                  <div class="col-4 text-center " [ngClass]="{'textc-blanco': data?.confirmacion,'textc-gris2':!data?.confirmacion}">
+                    <a href="{{data!.confirmacionURL}}" target="_blank"><mat-icon  [ngClass]="{'curser-p': data?.confirmacion}">visibility</mat-icon></a>
+                  </div>
+                  <div class="col-4 text-center textc-blanco" [ngClass]="{'textc-blanco': data?.confirmacion,'textc-gris2':!data?.confirmacion}">
+                    <mat-icon  [ngClass]="{'curser-p': data?.confirmacion}">mail</mat-icon>
+                  </div>
+                  <div class="col-4 text-center textc-blanco" [ngClass]="{'textc-blanco': data?.confirmacion,'textc-gris2':!data?.confirmacion}">
+                    <a href="{{data!.confirmacionURL}}" download><mat-icon  [ngClass]="{'curser-p': data?.confirmacion}">download</mat-icon></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col m-t-30">
+                <div class="card carDoc text-condensedbold-100 m-auto"><span>Pase de Abordar Ida</span></div>
+                <div class="row align-items-center m-t-20">
+                  <div class="col-4 text-center " [ngClass]="{'textc-blanco': data?.paseabordarida,'textc-gris2':!data?.paseabordarida}">
+                    <a href="{{data!.paseabordaridaURL}}" target="_blank"><mat-icon  [ngClass]="{'curser-p': data?.paseabordarida}">visibility</mat-icon></a>
+                  </div>
+                  <div class="col-4 text-center textc-blanco" [ngClass]="{'textc-blanco': data?.paseabordarida,'textc-gris2':!data?.paseabordarida}">
+                    <mat-icon  [ngClass]="{'curser-p': data?.paseabordarida}">mail</mat-icon>
+                  </div>
+                  <div class="col-4 text-center textc-blanco" [ngClass]="{'textc-blanco': data?.paseabordarida,'textc-gris2':!data?.paseabordarida}">
+                    <a href="{{data!.paseabordaridaURL}}" download><mat-icon  [ngClass]="{'curser-p': data?.paseabordarida}">download</mat-icon></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col m-t-30">
+                <div class="card carDoc text-condensedbold-100 m-auto"><span>Pase de Abordar Regreso</span></div>
+                <div class="row align-items-center m-t-20">
+                  <div class="col-4 text-center " [ngClass]="{'textc-blanco': data?.paseabordarvuelta,'textc-gris2':!data?.paseabordarvuelta}">
+                    <a href="{{data!.paseabordarvueltaURL}}" target="_blank"> <mat-icon  [ngClass]="{'curser-p': data?.paseabordarvuelta}">visibility</mat-icon></a>
+                  </div>
+                  <div class="col-4 text-center textc-blanco" [ngClass]="{'textc-blanco': data?.paseabordarvuelta,'textc-gris2':!data?.paseabordarvuelta}">
+                    <mat-icon  [ngClass]="{'curser-p': data?.paseabordarvuelta}">mail</mat-icon>
+                  </div>
+                  <div class="col-4 text-center textc-blanco" [ngClass]="{'textc-blanco': data?.paseabordarvuelta,'textc-gris2':!data?.paseabordarvuelta}">
+                    <a href="{{data!.paseabordarvueltaURL}}" download> <mat-icon  [ngClass]="{'curser-p': data?.paseabordarvuelta}">download</mat-icon></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col m-t-30">
+                <div class="card carDoc text-condensedbold-100 m-auto"><span>Agenda</span></div>
+                <div class="row align-items-center m-t-20">
+                  <div class="col-4 text-center " [ngClass]="{'textc-blanco': data?.agenda,'textc-gris2':!data?.agenda}">
+                    <a href="{{data!.agendaURL}}" target="_blank"><mat-icon  [ngClass]="{'curser-p': data?.agenda}">visibility</mat-icon></a>
+                  </div>
+                  <div class="col-4 text-center textc-blanco" [ngClass]="{'textc-blanco': data?.agenda,'textc-gris2':!data?.agenda}">
+                    <mat-icon  [ngClass]="{'curser-p': data?.agenda}">mail</mat-icon>
+                  </div>
+                  <div class="col-4 text-center textc-blanco" [ngClass]="{'textc-blanco': data?.agenda,'textc-gris2':!data?.agenda}">
+                    <a href="{{data!.agendaURL}}" download></a><mat-icon  [ngClass]="{'curser-p': data?.agenda}">download</mat-icon></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

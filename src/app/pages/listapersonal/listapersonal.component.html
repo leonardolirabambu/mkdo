@@ -1,0 +1,62 @@
+<app-head></app-head>
+
+<div class="container-fluid m-t-90">
+  <div class="row">
+    <div class="col-10">
+      <div class="row">
+        <div class="col-5">
+          <div class="input-group inpuitgropsearch mb-3">
+            <span class="input-group-text" id="basic-addon1">
+              <mat-icon>
+                search
+              </mat-icon>
+            </span>
+            <input (keyup.enter)="getlist()" [(ngModel)]="filters.palabra" type="text" class="form-control inputSearch" placeholder="Buscar por nombre" aria-label="Username" aria-describedby="basic-addon1">
+
+          </div>
+        </div>
+        <div class="col-4">
+          <button class="buttonRardi">Cargar masivo</button>
+        </div>
+        <div class="col-3">
+          <button class="buttonRardi">Crear usuario</button>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-2 text-end d-flex justify-content-end align-items-center ">
+      <button class="btn-flitrado">
+        <mat-icon>filter_alt</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid  m-t-20 ">
+  <div class="col-12 m-b-20 textc-newGray text-helveticaneuelight-100 textf-40">
+    {{titlePage}}
+  </div>
+  <div class="row m-b-30">
+    @for (item of listaPersona; track item.id) {
+    <div class="col-sm-3 col-md-3 col-xl-3 col-lg-2 m-t-20">
+        <app-card-personal [data]="item" (sendId)="getData($event)"></app-card-personal>
+    </div>
+  }
+  </div>
+  </div>
+  <div class="container-fluid ">
+    <div class="row">
+  <div class="col-7 text-center bg-transparent">
+    <mat-paginator #paginator
+               class=" bg-transparent"
+               (page)="handlePageEvent($event)"
+               [length]="totalRegister"
+               [pageSize]="filters.limit"
+               [showFirstLastButtons]="true"
+               [pageSizeOptions]="pagesList"
+               [pageIndex]="0"
+               aria-label="Select page">
+</mat-paginator>
+  </div>
+  </div>
+</div>

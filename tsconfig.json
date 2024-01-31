@@ -3,6 +3,13 @@
   "compileOnSave": false,
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "@assets/*":["./assets/*"],
+      "@shared/*":["./shared/*"],
+      "@enviroment/*":["./enviroment/*"],
+      "@services/*":["./src/app/core/services/*"],
+      "@interface/*":["./src/app/core/interface/*"],
+    },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,

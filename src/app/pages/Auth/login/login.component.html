@@ -1,0 +1,56 @@
+<div class="container-fluid containerlogin">
+  <div class="row justify-content-center">
+    <div class="col-12 text-center">
+      <span class="text-condensedbold-100 textf-70 textc-blanco">Medical Board </span>
+    </div>
+    <div class="col-12 text-center m-t-20">
+      <span class="text-condensedbold-100 textf-50 textc-blanco">Summit Nacional e Internacional 2024</span>
+    </div>
+    <div class="col-5 m-t-20">
+      <div class="card contCardLogin d-flex justify-content-center" >
+
+        <div class="card-body">
+          <div class="row row justify-content-center">
+            <div class="col-3">
+              <img src="assets/img/reckitt-01.svg" class="card-img-top" alt="...">
+            </div>
+          </div>
+          <form [formGroup]="formLogin" (submit)="sendLogin()">
+            <div class="mb-3 row justify-content-center m-t-40">
+              <div class="col-sm-8">
+                <input placeholder="Usuario (correo electrónico)" formControlName="usuario" type="text"  class="form-control-plaintext" id="staticEmail" value="email@example.com">
+              </div>
+            </div>
+            <div class="mb-3 row justify-content-center m-t-40">
+              <div class="col-sm-8">
+                <input placeholder="Contraseña" formControlName="password" type="password" class="form-control" id="inputPassword">
+              </div>
+            </div>
+            <div class="mb-3 row justify-content-center m-t-40">
+
+              <div class="col-sm-8 text-center">
+                <button class="pushable">
+                  <span class="shadow"></span>
+                  <span class="edge"></span>
+                  <span class="front">
+                    INGRESAR
+                  </span>
+                </button>
+              </div>
+              <div class="col-sm-8 text-center m-t-20">
+                <a [routerLink]="['/auth/recuperar/password']"><span class="text-condensedbold-700 text-azulprimary textf-30">Olvidé mi Contraseña</span></a>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+

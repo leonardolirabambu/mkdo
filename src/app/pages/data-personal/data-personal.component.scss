@@ -1,0 +1,58 @@
+
+
+.containerPg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: transparent radial-gradient(closest-side at 50% 50%, #E3001B 0%, #000000 100%) 0% 0% no-repeat padding-box;
+}
+
+.card-data{
+  background: transparent url(../../../assets/img/Fondotarjeta.png) center center no-repeat;
+  box-shadow: 0px 3px 6px #00000029;
+border: 3px solid #FFFFFF;
+border-radius: 54px;
+opacity: 1;
+backdrop-filter: blur(27px);
+padding: 0px 40px;
+}
+
+
+input,select{
+  background: rgba(255,255,255,0.5);
+border: 1px solid #FFFFFF;
+border-radius: 20px;
+opacity: 1;
+backdrop-filter: blur(30px);
+}
+
+.resetPass{
+  border-radius: 20px;
+  color:white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: 2px white solid;
+  background-color: #ff5bd0;
+}
+
+.carDoc{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 48%, #C1C1C1 55%, #CBCBCB 100%) 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #646464;
+  border-radius: 8px;
+
+  width: 127px;
+height: 126px;
+padding: 0px 10px;
+  & span{
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+a{
+  color: white;
+}
